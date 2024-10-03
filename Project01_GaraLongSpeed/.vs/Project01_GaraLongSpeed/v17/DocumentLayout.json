@@ -1,0 +1,101 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\\u0110\u1ED3 \u00E1n Winform\\10121210_\u0110\u1ED7 Th\u00E0nh Long_125211_Project1\\Project01_GaraLongSpeed\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2ABA6B95-2405-45DA-B80A-F701C1D141F2}|Project01_GaraLongSpeed\\Project01_GaraLongSpeed.csproj|e:\\\u0111\u1ED3 \u00E1n winform\\10121210_\u0111\u1ED7 th\u00E0nh long_125211_project1\\project01_garalongspeed\\project01_garalongspeed\\dao\\khdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2ABA6B95-2405-45DA-B80A-F701C1D141F2}|Project01_GaraLongSpeed\\Project01_GaraLongSpeed.csproj|solutionrelative:project01_garalongspeed\\dao\\khdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2ABA6B95-2405-45DA-B80A-F701C1D141F2}|Project01_GaraLongSpeed\\Project01_GaraLongSpeed.csproj|e:\\\u0111\u1ED3 \u00E1n winform\\10121210_\u0111\u1ED7 th\u00E0nh long_125211_project1\\project01_garalongspeed\\project01_garalongspeed\\gui\\fthongke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2ABA6B95-2405-45DA-B80A-F701C1D141F2}|Project01_GaraLongSpeed\\Project01_GaraLongSpeed.csproj|solutionrelative:project01_garalongspeed\\gui\\fthongke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2ABA6B95-2405-45DA-B80A-F701C1D141F2}|Project01_GaraLongSpeed\\Project01_GaraLongSpeed.csproj|E:\\\u0110\u1ED3 \u00E1n Winform\\10121210_\u0110\u1ED7 Th\u00E0nh Long_125211_Project1\\Project01_GaraLongSpeed\\project01_garalongspeed\\gui\\fthongke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2ABA6B95-2405-45DA-B80A-F701C1D141F2}|Project01_GaraLongSpeed\\Project01_GaraLongSpeed.csproj|solutionrelative:project01_garalongspeed\\gui\\fthongke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2ABA6B95-2405-45DA-B80A-F701C1D141F2}|Project01_GaraLongSpeed\\Project01_GaraLongSpeed.csproj|E:\\\u0110\u1ED3 \u00E1n Winform\\10121210_\u0110\u1ED7 Th\u00E0nh Long_125211_Project1\\Project01_GaraLongSpeed\\project01_garalongspeed\\gui\\fqlhh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2ABA6B95-2405-45DA-B80A-F701C1D141F2}|Project01_GaraLongSpeed\\Project01_GaraLongSpeed.csproj|solutionrelative:project01_garalongspeed\\gui\\fqlhh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2ABA6B95-2405-45DA-B80A-F701C1D141F2}|Project01_GaraLongSpeed\\Project01_GaraLongSpeed.csproj|E:\\\u0110\u1ED3 \u00E1n Winform\\10121210_\u0110\u1ED7 Th\u00E0nh Long_125211_Project1\\Project01_GaraLongSpeed\\project01_garalongspeed\\gui\\fqlhh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2ABA6B95-2405-45DA-B80A-F701C1D141F2}|Project01_GaraLongSpeed\\Project01_GaraLongSpeed.csproj|solutionrelative:project01_garalongspeed\\gui\\fqlhh.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "KHDAO.cs",
+              "DocumentMoniker": "E:\\\u0110\u1ED3 \u00E1n Winform\\10121210_\u0110\u1ED7 Th\u00E0nh Long_125211_Project1\\Project01_GaraLongSpeed\\Project01_GaraLongSpeed\\DAO\\KHDAO.cs",
+              "RelativeDocumentMoniker": "Project01_GaraLongSpeed\\DAO\\KHDAO.cs",
+              "ToolTip": "E:\\\u0110\u1ED3 \u00E1n Winform\\10121210_\u0110\u1ED7 Th\u00E0nh Long_125211_Project1\\Project01_GaraLongSpeed\\Project01_GaraLongSpeed\\DAO\\KHDAO.cs",
+              "RelativeToolTip": "Project01_GaraLongSpeed\\DAO\\KHDAO.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAxwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T09:06:22.554Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "fThongKe.cs",
+              "DocumentMoniker": "E:\\\u0110\u1ED3 \u00E1n Winform\\10121210_\u0110\u1ED7 Th\u00E0nh Long_125211_Project1\\Project01_GaraLongSpeed\\Project01_GaraLongSpeed\\GUI\\fThongKe.cs",
+              "RelativeDocumentMoniker": "Project01_GaraLongSpeed\\GUI\\fThongKe.cs",
+              "ToolTip": "E:\\\u0110\u1ED3 \u00E1n Winform\\10121210_\u0110\u1ED7 Th\u00E0nh Long_125211_Project1\\Project01_GaraLongSpeed\\Project01_GaraLongSpeed\\GUI\\fThongKe.cs",
+              "RelativeToolTip": "Project01_GaraLongSpeed\\GUI\\fThongKe.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAA7wCwAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T09:05:31.641Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "fThongKe.cs [Design]",
+              "DocumentMoniker": "E:\\\u0110\u1ED3 \u00E1n Winform\\10121210_\u0110\u1ED7 Th\u00E0nh Long_125211_Project1\\Project01_GaraLongSpeed\\Project01_GaraLongSpeed\\GUI\\fThongKe.cs",
+              "RelativeDocumentMoniker": "Project01_GaraLongSpeed\\GUI\\fThongKe.cs",
+              "ToolTip": "E:\\\u0110\u1ED3 \u00E1n Winform\\10121210_\u0110\u1ED7 Th\u00E0nh Long_125211_Project1\\Project01_GaraLongSpeed\\Project01_GaraLongSpeed\\GUI\\fThongKe.cs [Design]",
+              "RelativeToolTip": "Project01_GaraLongSpeed\\GUI\\fThongKe.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T09:05:34.27Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "fQLHH.cs",
+              "DocumentMoniker": "E:\\\u0110\u1ED3 \u00E1n Winform\\10121210_\u0110\u1ED7 Th\u00E0nh Long_125211_Project1\\Project01_GaraLongSpeed\\Project01_GaraLongSpeed\\GUI\\fQLHH.cs",
+              "RelativeDocumentMoniker": "Project01_GaraLongSpeed\\GUI\\fQLHH.cs",
+              "ToolTip": "E:\\\u0110\u1ED3 \u00E1n Winform\\10121210_\u0110\u1ED7 Th\u00E0nh Long_125211_Project1\\Project01_GaraLongSpeed\\Project01_GaraLongSpeed\\GUI\\fQLHH.cs",
+              "RelativeToolTip": "Project01_GaraLongSpeed\\GUI\\fQLHH.cs",
+              "ViewState": "AQIAAKAAAAAAAAAAAADwv+gAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
+              "WhenOpened": "2024-10-03T09:05:34.279Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "fQLHH.cs [Design]",
+              "DocumentMoniker": "E:\\\u0110\u1ED3 \u00E1n Winform\\10121210_\u0110\u1ED7 Th\u00E0nh Long_125211_Project1\\Project01_GaraLongSpeed\\Project01_GaraLongSpeed\\GUI\\fQLHH.cs",
+              "RelativeDocumentMoniker": "Project01_GaraLongSpeed\\GUI\\fQLHH.cs",
+              "ToolTip": "E:\\10121210_\u0110\u1ED7 Th\u00E0nh Long_125211_Project1\\Project01_GaraLongSpeed\\Project01_GaraLongSpeed\\GUI\\fQLHH.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\10121210_\u0110\u1ED7 Th\u00E0nh Long_125211_Project1\\Project01_GaraLongSpeed\\Project01_GaraLongSpeed\\GUI\\fQLHH.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
+              "WhenOpened": "2024-10-03T09:05:34.282Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

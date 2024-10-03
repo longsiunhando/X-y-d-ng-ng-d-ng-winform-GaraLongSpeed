@@ -1,0 +1,557 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LongSpeedGaraMotorCycleModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="account">
+          <Key>
+            <PropertyRef Name="username" />
+          </Key>
+          <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="displayname" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="pass" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="111" Nullable="false" />
+          <Property Name="sdt" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="diaChi" Type="nvarchar" MaxLength="111" Nullable="false" />
+          <Property Name="type" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HDB">
+          <Key>
+            <PropertyRef Name="maHDB" />
+          </Key>
+          <Property Name="maHDB" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="maKH" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="maNV" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="maSP" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="soLuong" Type="int" Nullable="false" />
+          <Property Name="giaBan" Type="float" Nullable="false" />
+          <Property Name="thanhTien" Type="float" Nullable="false" />
+          <Property Name="thoiGianB" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HDN">
+          <Key>
+            <PropertyRef Name="maHDN" />
+          </Key>
+          <Property Name="maHDN" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="maNCC" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="maNV" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="maSP" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="soLuong" Type="int" Nullable="false" />
+          <Property Name="giaNhap" Type="float" Nullable="false" />
+          <Property Name="thanhTien" Type="float" />
+          <Property Name="thoiGianN" Type="datetime" />
+        </EntityType>
+        <EntityType Name="KH">
+          <Key>
+            <PropertyRef Name="maKH" />
+          </Key>
+          <Property Name="maKH" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="tenKH" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="diachi" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="sdt" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="loaiSP">
+          <Key>
+            <PropertyRef Name="maLoai" />
+          </Key>
+          <Property Name="maLoai" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="tenLoai" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NCC">
+          <Key>
+            <PropertyRef Name="maNCC" />
+          </Key>
+          <Property Name="maNCC" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="tenNCC" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="diaChi" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="sdt" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NV">
+          <Key>
+            <PropertyRef Name="maNV" />
+          </Key>
+          <Property Name="maNV" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="tenNV" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="diaChi" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="sdt" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SP">
+          <Key>
+            <PropertyRef Name="maSP" />
+          </Key>
+          <Property Name="maSP" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="tenSP" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="soLuong" Type="int" Nullable="false" />
+          <Property Name="giaNhap" Type="float" Nullable="false" />
+          <Property Name="giaBan" Type="float" Nullable="false" />
+          <Property Name="maLoai" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__HDB__maKH__4316F928">
+          <End Role="KH" Type="Self.KH" Multiplicity="1" />
+          <End Role="HDB" Type="Self.HDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KH">
+              <PropertyRef Name="maKH" />
+            </Principal>
+            <Dependent Role="HDB">
+              <PropertyRef Name="maKH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HDB__maNV__440B1D61">
+          <End Role="NV" Type="Self.NV" Multiplicity="1" />
+          <End Role="HDB" Type="Self.HDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NV">
+              <PropertyRef Name="maNV" />
+            </Principal>
+            <Dependent Role="HDB">
+              <PropertyRef Name="maNV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HDB__thoiGianB__4222D4EF">
+          <End Role="SP" Type="Self.SP" Multiplicity="1" />
+          <End Role="HDB" Type="Self.HDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SP">
+              <PropertyRef Name="maSP" />
+            </Principal>
+            <Dependent Role="HDB">
+              <PropertyRef Name="maSP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HDN__maNCC__35BCFE0A">
+          <End Role="NCC" Type="Self.NCC" Multiplicity="1" />
+          <End Role="HDN" Type="Self.HDN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NCC">
+              <PropertyRef Name="maNCC" />
+            </Principal>
+            <Dependent Role="HDN">
+              <PropertyRef Name="maNCC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HDN__maNV__36B12243">
+          <End Role="NV" Type="Self.NV" Multiplicity="1" />
+          <End Role="HDN" Type="Self.HDN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NV">
+              <PropertyRef Name="maNV" />
+            </Principal>
+            <Dependent Role="HDN">
+              <PropertyRef Name="maNV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HDN__maSP__34C8D9D1">
+          <End Role="SP" Type="Self.SP" Multiplicity="1" />
+          <End Role="HDN" Type="Self.HDN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SP">
+              <PropertyRef Name="maSP" />
+            </Principal>
+            <Dependent Role="HDN">
+              <PropertyRef Name="maSP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SP__maLoai__2C3393D0">
+          <End Role="loaiSP" Type="Self.loaiSP" Multiplicity="1" />
+          <End Role="SP" Type="Self.SP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="loaiSP">
+              <PropertyRef Name="maLoai" />
+            </Principal>
+            <Dependent Role="SP">
+              <PropertyRef Name="maLoai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LongSpeedGaraMotorCycleModelStoreContainer">
+          <EntitySet Name="account" EntityType="Self.account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HDB" EntityType="Self.HDB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HDN" EntityType="Self.HDN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KH" EntityType="Self.KH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="loaiSP" EntityType="Self.loaiSP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NCC" EntityType="Self.NCC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NV" EntityType="Self.NV" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SP" EntityType="Self.SP" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__HDB__maKH__4316F928" Association="Self.FK__HDB__maKH__4316F928">
+            <End Role="KH" EntitySet="KH" />
+            <End Role="HDB" EntitySet="HDB" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HDB__maNV__440B1D61" Association="Self.FK__HDB__maNV__440B1D61">
+            <End Role="NV" EntitySet="NV" />
+            <End Role="HDB" EntitySet="HDB" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HDB__thoiGianB__4222D4EF" Association="Self.FK__HDB__thoiGianB__4222D4EF">
+            <End Role="SP" EntitySet="SP" />
+            <End Role="HDB" EntitySet="HDB" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HDN__maNCC__35BCFE0A" Association="Self.FK__HDN__maNCC__35BCFE0A">
+            <End Role="NCC" EntitySet="NCC" />
+            <End Role="HDN" EntitySet="HDN" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HDN__maNV__36B12243" Association="Self.FK__HDN__maNV__36B12243">
+            <End Role="NV" EntitySet="NV" />
+            <End Role="HDN" EntitySet="HDN" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HDN__maSP__34C8D9D1" Association="Self.FK__HDN__maSP__34C8D9D1">
+            <End Role="SP" EntitySet="SP" />
+            <End Role="HDN" EntitySet="HDN" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SP__maLoai__2C3393D0" Association="Self.FK__SP__maLoai__2C3393D0">
+            <End Role="loaiSP" EntitySet="loaiSP" />
+            <End Role="SP" EntitySet="SP" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LongSpeedGaraMotorCycleModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="account">
+          <Key>
+            <PropertyRef Name="username" />
+          </Key>
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="displayname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="pass" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="111" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="sdt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="diaChi" Type="String" MaxLength="111" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="type" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="HDB">
+          <Key>
+            <PropertyRef Name="maHDB" />
+          </Key>
+          <Property Name="maHDB" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="maKH" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="maNV" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="maSP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="soLuong" Type="Int32" Nullable="false" />
+          <Property Name="giaBan" Type="Double" Nullable="false" />
+          <Property Name="thanhTien" Type="Double" Nullable="false" />
+          <Property Name="thoiGianB" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="KH" Relationship="Self.FK__HDB__maKH__4316F928" FromRole="HDB" ToRole="KH" />
+          <NavigationProperty Name="NV" Relationship="Self.FK__HDB__maNV__440B1D61" FromRole="HDB" ToRole="NV" />
+          <NavigationProperty Name="SP" Relationship="Self.FK__HDB__thoiGianB__4222D4EF" FromRole="HDB" ToRole="SP" />
+        </EntityType>
+        <EntityType Name="HDN">
+          <Key>
+            <PropertyRef Name="maHDN" />
+          </Key>
+          <Property Name="maHDN" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="maNCC" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="maNV" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="maSP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="soLuong" Type="Int32" Nullable="false" />
+          <Property Name="giaNhap" Type="Double" Nullable="false" />
+          <Property Name="thanhTien" Type="Double" />
+          <Property Name="thoiGianN" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="NCC" Relationship="Self.FK__HDN__maNCC__35BCFE0A" FromRole="HDN" ToRole="NCC" />
+          <NavigationProperty Name="NV" Relationship="Self.FK__HDN__maNV__36B12243" FromRole="HDN" ToRole="NV" />
+          <NavigationProperty Name="SP" Relationship="Self.FK__HDN__maSP__34C8D9D1" FromRole="HDN" ToRole="SP" />
+        </EntityType>
+        <EntityType Name="KH">
+          <Key>
+            <PropertyRef Name="maKH" />
+          </Key>
+          <Property Name="maKH" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tenKH" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="diachi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="sdt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="HDBs" Relationship="Self.FK__HDB__maKH__4316F928" FromRole="KH" ToRole="HDB" />
+        </EntityType>
+        <EntityType Name="loaiSP">
+          <Key>
+            <PropertyRef Name="maLoai" />
+          </Key>
+          <Property Name="maLoai" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tenLoai" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="SPs" Relationship="Self.FK__SP__maLoai__2C3393D0" FromRole="loaiSP" ToRole="SP" />
+        </EntityType>
+        <EntityType Name="NCC">
+          <Key>
+            <PropertyRef Name="maNCC" />
+          </Key>
+          <Property Name="maNCC" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tenNCC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="diaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="sdt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="HDNs" Relationship="Self.FK__HDN__maNCC__35BCFE0A" FromRole="NCC" ToRole="HDN" />
+        </EntityType>
+        <EntityType Name="NV">
+          <Key>
+            <PropertyRef Name="maNV" />
+          </Key>
+          <Property Name="maNV" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tenNV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="diaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="sdt" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="HDBs" Relationship="Self.FK__HDB__maNV__440B1D61" FromRole="NV" ToRole="HDB" />
+          <NavigationProperty Name="HDNs" Relationship="Self.FK__HDN__maNV__36B12243" FromRole="NV" ToRole="HDN" />
+        </EntityType>
+        <EntityType Name="SP">
+          <Key>
+            <PropertyRef Name="maSP" />
+          </Key>
+          <Property Name="maSP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="tenSP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="soLuong" Type="Int32" Nullable="false" />
+          <Property Name="giaNhap" Type="Double" Nullable="false" />
+          <Property Name="giaBan" Type="Double" Nullable="false" />
+          <Property Name="maLoai" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="HDBs" Relationship="Self.FK__HDB__thoiGianB__4222D4EF" FromRole="SP" ToRole="HDB" />
+          <NavigationProperty Name="HDNs" Relationship="Self.FK__HDN__maSP__34C8D9D1" FromRole="SP" ToRole="HDN" />
+          <NavigationProperty Name="loaiSP" Relationship="Self.FK__SP__maLoai__2C3393D0" FromRole="SP" ToRole="loaiSP" />
+        </EntityType>
+        <Association Name="FK__HDB__maKH__4316F928">
+          <End Role="KH" Type="Self.KH" Multiplicity="1" />
+          <End Role="HDB" Type="Self.HDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KH">
+              <PropertyRef Name="maKH" />
+            </Principal>
+            <Dependent Role="HDB">
+              <PropertyRef Name="maKH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HDB__maNV__440B1D61">
+          <End Role="NV" Type="Self.NV" Multiplicity="1" />
+          <End Role="HDB" Type="Self.HDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NV">
+              <PropertyRef Name="maNV" />
+            </Principal>
+            <Dependent Role="HDB">
+              <PropertyRef Name="maNV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HDB__thoiGianB__4222D4EF">
+          <End Role="SP" Type="Self.SP" Multiplicity="1" />
+          <End Role="HDB" Type="Self.HDB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SP">
+              <PropertyRef Name="maSP" />
+            </Principal>
+            <Dependent Role="HDB">
+              <PropertyRef Name="maSP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HDN__maNCC__35BCFE0A">
+          <End Role="NCC" Type="Self.NCC" Multiplicity="1" />
+          <End Role="HDN" Type="Self.HDN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NCC">
+              <PropertyRef Name="maNCC" />
+            </Principal>
+            <Dependent Role="HDN">
+              <PropertyRef Name="maNCC" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HDN__maNV__36B12243">
+          <End Role="NV" Type="Self.NV" Multiplicity="1" />
+          <End Role="HDN" Type="Self.HDN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NV">
+              <PropertyRef Name="maNV" />
+            </Principal>
+            <Dependent Role="HDN">
+              <PropertyRef Name="maNV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__HDN__maSP__34C8D9D1">
+          <End Role="SP" Type="Self.SP" Multiplicity="1" />
+          <End Role="HDN" Type="Self.HDN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SP">
+              <PropertyRef Name="maSP" />
+            </Principal>
+            <Dependent Role="HDN">
+              <PropertyRef Name="maSP" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__SP__maLoai__2C3393D0">
+          <End Role="loaiSP" Type="Self.loaiSP" Multiplicity="1" />
+          <End Role="SP" Type="Self.SP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="loaiSP">
+              <PropertyRef Name="maLoai" />
+            </Principal>
+            <Dependent Role="SP">
+              <PropertyRef Name="maLoai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="LongSpeedGaraMotorCycleEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="accounts" EntityType="Self.account" />
+          <EntitySet Name="HDBs" EntityType="Self.HDB" />
+          <EntitySet Name="HDNs" EntityType="Self.HDN" />
+          <EntitySet Name="KHs" EntityType="Self.KH" />
+          <EntitySet Name="loaiSPs" EntityType="Self.loaiSP" />
+          <EntitySet Name="NCCs" EntityType="Self.NCC" />
+          <EntitySet Name="NVs" EntityType="Self.NV" />
+          <EntitySet Name="SPs" EntityType="Self.SP" />
+          <AssociationSet Name="FK__HDB__maKH__4316F928" Association="Self.FK__HDB__maKH__4316F928">
+            <End Role="KH" EntitySet="KHs" />
+            <End Role="HDB" EntitySet="HDBs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HDB__maNV__440B1D61" Association="Self.FK__HDB__maNV__440B1D61">
+            <End Role="NV" EntitySet="NVs" />
+            <End Role="HDB" EntitySet="HDBs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HDB__thoiGianB__4222D4EF" Association="Self.FK__HDB__thoiGianB__4222D4EF">
+            <End Role="SP" EntitySet="SPs" />
+            <End Role="HDB" EntitySet="HDBs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HDN__maNCC__35BCFE0A" Association="Self.FK__HDN__maNCC__35BCFE0A">
+            <End Role="NCC" EntitySet="NCCs" />
+            <End Role="HDN" EntitySet="HDNs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HDN__maNV__36B12243" Association="Self.FK__HDN__maNV__36B12243">
+            <End Role="NV" EntitySet="NVs" />
+            <End Role="HDN" EntitySet="HDNs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__HDN__maSP__34C8D9D1" Association="Self.FK__HDN__maSP__34C8D9D1">
+            <End Role="SP" EntitySet="SPs" />
+            <End Role="HDN" EntitySet="HDNs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__SP__maLoai__2C3393D0" Association="Self.FK__SP__maLoai__2C3393D0">
+            <End Role="loaiSP" EntitySet="loaiSPs" />
+            <End Role="SP" EntitySet="SPs" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LongSpeedGaraMotorCycleModelStoreContainer" CdmEntityContainer="LongSpeedGaraMotorCycleEntities">
+          <EntitySetMapping Name="accounts">
+            <EntityTypeMapping TypeName="LongSpeedGaraMotorCycleModel.account">
+              <MappingFragment StoreEntitySet="account">
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="displayname" ColumnName="displayname" />
+                <ScalarProperty Name="pass" ColumnName="pass" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+                <ScalarProperty Name="diaChi" ColumnName="diaChi" />
+                <ScalarProperty Name="type" ColumnName="type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HDBs">
+            <EntityTypeMapping TypeName="LongSpeedGaraMotorCycleModel.HDB">
+              <MappingFragment StoreEntitySet="HDB">
+                <ScalarProperty Name="maHDB" ColumnName="maHDB" />
+                <ScalarProperty Name="maKH" ColumnName="maKH" />
+                <ScalarProperty Name="maNV" ColumnName="maNV" />
+                <ScalarProperty Name="maSP" ColumnName="maSP" />
+                <ScalarProperty Name="soLuong" ColumnName="soLuong" />
+                <ScalarProperty Name="giaBan" ColumnName="giaBan" />
+                <ScalarProperty Name="thanhTien" ColumnName="thanhTien" />
+                <ScalarProperty Name="thoiGianB" ColumnName="thoiGianB" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HDNs">
+            <EntityTypeMapping TypeName="LongSpeedGaraMotorCycleModel.HDN">
+              <MappingFragment StoreEntitySet="HDN">
+                <ScalarProperty Name="maHDN" ColumnName="maHDN" />
+                <ScalarProperty Name="maNCC" ColumnName="maNCC" />
+                <ScalarProperty Name="maNV" ColumnName="maNV" />
+                <ScalarProperty Name="maSP" ColumnName="maSP" />
+                <ScalarProperty Name="soLuong" ColumnName="soLuong" />
+                <ScalarProperty Name="giaNhap" ColumnName="giaNhap" />
+                <ScalarProperty Name="thanhTien" ColumnName="thanhTien" />
+                <ScalarProperty Name="thoiGianN" ColumnName="thoiGianN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KHs">
+            <EntityTypeMapping TypeName="LongSpeedGaraMotorCycleModel.KH">
+              <MappingFragment StoreEntitySet="KH">
+                <ScalarProperty Name="maKH" ColumnName="maKH" />
+                <ScalarProperty Name="tenKH" ColumnName="tenKH" />
+                <ScalarProperty Name="diachi" ColumnName="diachi" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="loaiSPs">
+            <EntityTypeMapping TypeName="LongSpeedGaraMotorCycleModel.loaiSP">
+              <MappingFragment StoreEntitySet="loaiSP">
+                <ScalarProperty Name="maLoai" ColumnName="maLoai" />
+                <ScalarProperty Name="tenLoai" ColumnName="tenLoai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NCCs">
+            <EntityTypeMapping TypeName="LongSpeedGaraMotorCycleModel.NCC">
+              <MappingFragment StoreEntitySet="NCC">
+                <ScalarProperty Name="maNCC" ColumnName="maNCC" />
+                <ScalarProperty Name="tenNCC" ColumnName="tenNCC" />
+                <ScalarProperty Name="diaChi" ColumnName="diaChi" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NVs">
+            <EntityTypeMapping TypeName="LongSpeedGaraMotorCycleModel.NV">
+              <MappingFragment StoreEntitySet="NV">
+                <ScalarProperty Name="maNV" ColumnName="maNV" />
+                <ScalarProperty Name="tenNV" ColumnName="tenNV" />
+                <ScalarProperty Name="diaChi" ColumnName="diaChi" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SPs">
+            <EntityTypeMapping TypeName="LongSpeedGaraMotorCycleModel.SP">
+              <MappingFragment StoreEntitySet="SP">
+                <ScalarProperty Name="maSP" ColumnName="maSP" />
+                <ScalarProperty Name="tenSP" ColumnName="tenSP" />
+                <ScalarProperty Name="soLuong" ColumnName="soLuong" />
+                <ScalarProperty Name="giaNhap" ColumnName="giaNhap" />
+                <ScalarProperty Name="giaBan" ColumnName="giaBan" />
+                <ScalarProperty Name="maLoai" ColumnName="maLoai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
